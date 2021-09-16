@@ -1,0 +1,8 @@
+.main__line-title {
+  width: 160px;
+  min-height: 2px;
+  background: #444444;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+}

@@ -1,0 +1,14 @@
+.about__linear-gradient {
+  position: relative;
+  max-width: 1441px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 900px;
+  background-image: linear-gradient(5deg, white 17%, #dedede 17.1%, transparent 20%);
+  transition: all 1s;
+}
+@media screen and (max-width: 1024px) {
+  .about__linear-gradient {
+    min-height: 66vw;
+  }
+}

@@ -1,0 +1,6 @@
+.lead__content {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}

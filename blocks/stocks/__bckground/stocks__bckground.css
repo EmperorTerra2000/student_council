@@ -1,0 +1,6 @@
+.stocks__bckground {
+  background: linear-gradient(177deg, white 13%, rgba(0, 0, 0, 0.1) 13.1%, transparent 17%),
+    linear-gradient(4deg, white 12.6%, rgba(0, 0, 0, 0.1) 12.7%, transparent 15%), #e4721e;
+  max-width: 1441px;
+  margin: 0 auto;
+}

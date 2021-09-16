@@ -1,0 +1,7 @@
+.stock {
+  display: flex;
+  max-width: 160px;
+  min-height: 261px;
+  flex-direction: column;
+  align-items: center;
+}

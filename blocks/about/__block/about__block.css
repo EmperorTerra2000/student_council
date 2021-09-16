@@ -1,0 +1,10 @@
+.about__block {
+  max-width: 351px;
+  align-self: center;
+  margin-top: -49px;
+}
+@media screen and (max-width: 1024px) {
+  .about__block {
+    max-width: 480px;
+  }
+}

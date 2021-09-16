@@ -1,0 +1,7 @@
+.stocks__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  justify-content: space-between;
+  gap: 18px;
+}

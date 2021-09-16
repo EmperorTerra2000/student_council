@@ -1,0 +1,11 @@
+.documents__year {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 17px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 19px;
+}
+.documents__year:last-of-type {
+  margin-bottom: 0;
+}

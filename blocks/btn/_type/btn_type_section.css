@@ -1,0 +1,7 @@
+.btn_type_section {
+  border-color: #444444;
+  color: #444444;
+}
+.btn_type_section:first-child {
+  margin-right: 30px;
+}

@@ -1,0 +1,5 @@
+.footer__logo {
+  object-fit: cover;
+  object-position: center;
+  max-width: 69px;
+}

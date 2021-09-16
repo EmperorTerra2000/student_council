@@ -1,0 +1,8 @@
+.person__img {
+  display: block;
+  border-radius: 50%;
+  max-width: 160px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}

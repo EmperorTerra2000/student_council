@@ -1,0 +1,10 @@
+.lead__bckground {
+  max-width: 1441px;
+  margin: 0 auto;
+  background-image: url('../../../images/lead-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 62.5vw;
+  max-height: 720px;
+}

@@ -1,0 +1,8 @@
+.footer__link-logo {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.footer__link-logo:first-of-type {
+  margin-right: 18px;
+}

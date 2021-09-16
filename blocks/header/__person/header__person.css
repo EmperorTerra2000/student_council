@@ -1,0 +1,4 @@
+.header__person {
+  object-fit: contain;
+  object-position: center;
+}

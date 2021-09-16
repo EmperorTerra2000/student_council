@@ -1,0 +1,9 @@
+.lead__nav-link {
+  width: 100%;
+  min-height: 20px;
+  padding: 0px 3px 0px 10px;
+  margin-bottom: 10px;
+}
+.lead__nav-link:hover {
+  border: 1px solid white;
+}

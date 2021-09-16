@@ -1,0 +1,6 @@
+.person__info_type_director {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
