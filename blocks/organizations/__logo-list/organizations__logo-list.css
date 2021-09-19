@@ -1,9 +1,12 @@
 .organizations__logo-list {
   margin-top: 20px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 170px);
-  row-gap: 24px;
-  column-gap: 18px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  /* flex-direction: row; */
+  /* display: grid; */
+  /* grid-template-columns: repeat(6, 170px); */
+  /* row-gap: 24px;
+  column-gap: 18px; */
 }

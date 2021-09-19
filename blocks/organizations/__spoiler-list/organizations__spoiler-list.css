@@ -1,0 +1,7 @@
+.organizations__spoiler-list {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: none;
+  transition: opacity 2s linear;
+}

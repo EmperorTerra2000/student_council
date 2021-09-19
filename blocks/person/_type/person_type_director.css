@@ -1,5 +1,6 @@
 .person_type_director {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: 34.3%;
   margin-top: 50px;
   max-width: 372px;
   display: flex;
