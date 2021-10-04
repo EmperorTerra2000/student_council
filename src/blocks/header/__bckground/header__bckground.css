@@ -1,0 +1,8 @@
+.header__bckground {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, white 0%, rgba(0, 0, 0, 0.1) 2%, transparent 60%);
+  min-height: 30px;
+  max-width: 1441px;
+  margin: 0 auto;
+}

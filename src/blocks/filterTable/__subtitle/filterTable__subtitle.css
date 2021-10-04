@@ -1,0 +1,9 @@
+.filterTable__subtitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 18px;
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+}

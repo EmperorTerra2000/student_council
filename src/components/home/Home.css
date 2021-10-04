@@ -1,0 +1,54 @@
+/* lead */
+@import url('../../blocks/lead/lead.css');
+@import url('../../blocks/lead/__bckground/lead__bckground.css');
+@import url('../../blocks/lead/__linear-gradient/lead__linear-gradient.css');
+@import url('../../blocks/lead/__content/lead__content.css');
+@import url('../../blocks/lead/__event/lead__event.css');
+@import url('../../blocks/lead/__event-data/lead__event-data.css');
+@import url('../../blocks/lead/__event-name/lead__event-name.css');
+@import url('../../blocks/lead/__event-description/lead__event-description.css');
+@import url('../../blocks/lead/__nav-links/lead__nav-links.css');
+@import url('../../blocks/lead/__nav-link/lead__nav-link.css');
+@import url('../../blocks/lead/__link/lead__link.css');
+/* about */
+@import url('../../blocks/about/about.css');
+@import url('../../blocks/about/__linear-gradient/about__linear-gradient.css');
+@import url('../../blocks/about/__content/about__content.css');
+@import url('../../blocks/about/__block/about__block.css');
+@import url('../../blocks/about/__title/about__title.css');
+@import url('../../blocks/about/__description/about__description.css');
+@import url('../../blocks/about/__img/about__img.css');
+/* organizations */
+@import url('../../blocks/organizations/__logo-list/organizations__logo-list.css');
+@import url('../../blocks/organizations/__spoiler-list/organizations__spoiler-list.css');
+@import url('../../blocks/organizations/__spoiler-list/_active/organizations__spoiler-list_active.css');
+/* main */
+@import url('../../blocks/main/__title/main__title.css');
+@import url('../../blocks/main/__line-title/main__line-title.css');
+@import url('../../blocks/main/__btn-block/main__btn-block.css');
+/* organization */
+
+/* events */
+@import url('../../blocks/events/events.css');
+/* departures */
+@import url('../../blocks/departures/departures.css');
+/* stocks */
+@import url('../../blocks/stocks/__bckground/stocks__bckground.css');
+@import url('../../blocks/stocks/__content/stocks__content.css');
+@import url('../../blocks/stocks/__list/stocks__list.css');
+@import url('../../blocks/main/__title/_type/main__title_type_stocks.css');
+@import url('../../blocks/main/__line-title/_type/main__line-title_type_stocks.css');
+@import url('../../blocks/main/__subtitle/main__subtitle.css');
+/* team */
+@import url('../../blocks/team/__list-person/team__list-person.css');
+
+@import url('../../blocks/main/__btn-block/_type/main__btn-block_type_team.css');
+/* documents */
+@import url('../../blocks/documents/documents.css');
+@import url('../../blocks/documents/__bckground/documents__bckground.css');
+@import url('../../blocks/documents/__title/documents__title.css');
+@import url('../../blocks/main/__title/_type/main__title_type_documents.css');
+@import url('../../blocks/main/__line-title/_type/main__line-title_type_documents.css');
+@import url('../../blocks/documents/__content/documents__content.css');
+@import url('../../blocks/documents/__main/documents__main.css');
+@import url('../../blocks/documents/__list/documents__list.css');

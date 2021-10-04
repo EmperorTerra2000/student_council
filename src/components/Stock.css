@@ -1,0 +1,4 @@
+@import url('../blocks/stock/stock.css');
+@import url('../blocks/stock/__percent/stock__percent.css');
+@import url('../blocks/stock/__organization/stock__organization.css');
+@import url('../blocks/stock/__description/stock__description.css');

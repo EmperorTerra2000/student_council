@@ -1,0 +1,10 @@
+@import url('../blocks/btn/_type/btn_type_section.css');
+@import url('../blocks/btn/btn.css');
+@import url('../blocks/btn/_type/btn_type_profile.css');
+@import url('../blocks/btn/_type/btn_type_section.css');
+@import url('../blocks/btn/_active/btn_active.css');
+@import url('../blocks/btn/_disabled/btn_disabled.css');
+
+@import url('../blocks/btn/_type/btn_type_lead-detailed.css');
+@import url('../blocks/btn/_type/btn_type_lead-regist.css');
+@import url('../blocks/btn/_type/btn_type_about-detailed.css');

@@ -1,0 +1,15 @@
+@import url('../blocks/person/person.css');
+@import url('../blocks/person/_type/person_type_director.css');
+@import url('../blocks/person/__img/person__img.css');
+@import url('../blocks/person/__img/_type/person__img_type_director.css');
+@import url('../blocks/person/__info/person__info.css');
+@import url('../blocks/person/__info/_type/person__info_type_director.css');
+@import url('../blocks/person/__name/person__name.css');
+@import url('../blocks/person/__name/_type/person__name_type_director.css');
+@import url('../blocks/person/__duty/person__duty.css');
+@import url('../blocks/person/__duty/_type/person__duty_type_director.css');
+@import url('../blocks/person/__contact/person__contact.css');
+@import url('../blocks/person/__contact/_type/person__contact_type_director.css');
+@import url('../blocks/person/__block/person__block.css');
+@import url('../blocks/person/__block/_type/person__block_type_director.css');
+@import url('../blocks/person/__social-icon/person__social-icon.css');
