@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+<<<<<<< HEAD
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -68,3 +69,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+Для центрирования страницы внутри директории **blocks** присутствует селектор <code>.page__spacing</code> (blocks/page/\_\_spacing/page\_\_spacing.css), рекомендуется использовать его при разработке новых страниц.
+>>>>>>> ee2f4b1a2a6485f34c143394e6224776b40928ca
