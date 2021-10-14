@@ -1,0 +1,5 @@
+.cardProgress_type_club {
+  margin: 0;
+  margin-right: -8px;
+  background: linear-gradient(-45deg, #1cc861 0%, #1cc861 24%, transparent 24.1%);
+}

@@ -2,7 +2,7 @@ import "./Button.css";
 
 function Button(props){
   return (
-    <button className={`btn ${props.selectors}`}>{props.name}</button>
+    <button className={`btn ${props.selectors}`} style={props.style} disabled={props.disabled}>{props.name}</button>
   );
 }
 

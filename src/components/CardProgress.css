@@ -1,0 +1,7 @@
+@import url('../blocks/cardProgress/cardProgress.css');
+@import url('../blocks/cardProgress/_type/cardProgress_type_wait.css');
+@import url('../blocks/cardProgress/__element/cardProgress__element.css');
+@import url('../blocks/cardProgress/__element/_type/cardProgress__element_type_editing.css');
+@import url('../blocks/cardProgress/__element/_type/cardProgress__element_type_wait.css');
+@import url('../blocks/cardProgress/_type/cardProgress_type_club.css');
+@import url('../blocks/cardProgress/__element/_type/cardProgress__element_type_club.css');

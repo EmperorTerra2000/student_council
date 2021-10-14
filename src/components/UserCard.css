@@ -1,0 +1,5 @@
+@import url('../blocks/userCard/userCard.css');
+@import url('../blocks/userCard/__name/userCard__name.css');
+@import url('../blocks/userCard/__name/_type/userCard__name_type_events.css');
+@import url('../blocks/userCard/__image/userCard__image.css');
+@import url('../blocks/userCard/__image/_type/userCard__image_type_events.css');

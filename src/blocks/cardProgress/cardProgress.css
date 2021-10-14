@@ -1,0 +1,6 @@
+.cardProgress {
+  grid-area: progres;
+  position: relative;
+  background: linear-gradient(-45deg, #1cc861 0%, #1cc861 34%, transparent 20.1%);
+  margin: 0 -12px -13px 0;
+}

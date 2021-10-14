@@ -1,0 +1,8 @@
+.cardEditing__element {
+  object-fit: cover;
+  object-position: center;
+  width: 23px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}

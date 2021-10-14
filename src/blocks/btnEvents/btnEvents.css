@@ -1,0 +1,16 @@
+.btnEvents {
+  /* border: 1px solid white; */
+  border: none;
+  background: #1cc861;
+  border-radius: 14px;
+  color: white;
+  height: 46px;
+  width: 121px;
+  font-size: 12.1px;
+  line-height: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow linear 300ms;
+  grid-area: progres;
+  align-self: end;
+}

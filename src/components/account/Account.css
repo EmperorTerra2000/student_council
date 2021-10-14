@@ -255,28 +255,229 @@ p {
   margin-bottom: 30px;
   /* align-content: center; */
 }
-.user-item__name {
-  width: 81px;
-  margin-left: 18px;
-  font-size: 14px;
-}
+
 .user-item__item {
   font-size: 16px;
   line-height: 18px;
   justify-self: center;
   align-self: center;
 }
-.user-item_type_profile {
-  display: flex;
-  margin: 0;
-}
-.user-item__avatar {
-  border-radius: 50%;
-  width: 37px;
-  object-fit: cover;
-  object-position: center;
-}
+
 .user-item_type_progress {
   object-fit: cover;
   object-position: center;
+}
+
+/*registevents*/
+.registEvents {
+  margin-top: 19px;
+}
+
+/*registCard*/
+.registEvents__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin-top: 26px;
+}
+
+.registCard {
+  margin: 0 31px 19px 0;
+  position: relative;
+  width: 349px;
+  /* flex: 0 1 360px; */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 26px -1px rgba(0, 0, 0, 0.14);
+}
+
+.registCard:nth-child(3n) {
+  margin-right: 0;
+}
+
+.registCard:last-of-type {
+  margin-right: 0;
+}
+
+.registCard__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.registCard__detailed {
+  display: grid;
+  height: 125px;
+  padding: 9px 12px 13px 25px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-columns: 1fr 125px;
+  grid-template-areas:
+    'title logo'
+    'duty progres'
+    'user progres';
+}
+
+.registCard__title {
+  font-size: 17px;
+  line-height: 17px;
+  grid-area: title;
+}
+
+.registCard__logo {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  justify-self: end;
+  border-radius: 50%;
+  width: 28px;
+  grid-area: logo;
+}
+
+.registCard__duty {
+  font-size: 13px;
+  grid-area: duty;
+}
+/*block-info*/
+.registCard__block-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 101px;
+  min-height: 43px;
+  border-radius: 0 22px 22px 0;
+  position: absolute;
+  background: #444444;
+  top: 20px;
+  padding-left: 15px;
+}
+.registCard__date {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: white;
+}
+.registCard__venue {
+  display: flex;
+  font-size: 7.5px;
+  line-height: 10px;
+  color: white;
+}
+.registCard__venue-logo {
+  display: block;
+  width: 5px;
+  height: 8px;
+  margin-right: 2px;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*clubs*/
+.clubs {
+  margin-top: 52px;
+}
+.club {
+  border-radius: 10px;
+  box-shadow: 0px 0px 26px -1px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  width: 160px;
+  height: 219px;
+  margin: 0 30px 32px 0;
+}
+.club:nth-child(6n) {
+  margin-right: 0;
+}
+
+.club:last-of-type {
+  margin-right: 0;
+}
+.club__image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  max-height: 122px;
+}
+.club__block-info {
+  position: relative;
+  display: grid;
+  height: 97px;
+  padding: 0px 8px;
+  grid-template-rows: 1fr 48px;
+  grid-template-areas:
+    'title'
+    'progres';
+}
+.club__title {
+  grid-area: title;
+  font-size: 17px;
+  line-height: 17px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  padding-top: 5px;
+}
+.clubs__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin-top: 32px;
+}
+
+/*form*/
+
+.form__item {
+  margin-bottom: 2px;
+}
+.form__feedback {
+  max-width: 728px;
+  margin: 0 auto;
+}
+.form__label {
+  padding: 0 0 0 11px;
+  font-size: 16px;
+  line-height: 190%;
+}
+.form__input {
+  border-radius: 15px;
+  /* width: 50%; */
+}
+.form__input_type_subject {
+  width: 48%;
+  padding: 0 10px;
+  min-height: 30px;
+}
+.form__input_type_textarea {
+  width: 100%;
+  padding: 6px 10px 6px 10px;
+  min-height: 146px;
+  resize: vertical;
+  line-height: 114%;
+}
+/*file*/
+.file__item {
+  position: relative;
+  min-height: 100px;
+  max-width: 100px;
+}
+.file__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+.file__button {
+  min-height: 100px;
+  max-width: 100%;
+  /* background-color: red; */
+  border: 2px dashed #444444;
+  border-radius: 20px;
+  background: url('../../images/file-item-bg.svg') no-repeat center;
+  background-size: 14.7px 14.7px;
 }

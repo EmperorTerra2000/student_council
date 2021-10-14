@@ -1,0 +1,9 @@
+.cardProgress__element {
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  right: 11px;
+  bottom: 15px;
+  width: 24px;
+  height: 14px;
+}

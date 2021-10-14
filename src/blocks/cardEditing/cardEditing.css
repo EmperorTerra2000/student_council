@@ -1,0 +1,9 @@
+.cardEditing {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(225deg, #444444 0%, #444444 34%, transparent 20.1%);
+  width: 137px;
+  height: 74.8px;
+  /* background-color: red; */
+}
