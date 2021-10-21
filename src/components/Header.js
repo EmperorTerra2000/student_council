@@ -2,6 +2,7 @@ import "./Header.css";
 
 import logo from "../images/logo.svg";
 import headerPerson from "../images/header-person.svg";
+import { Link } from "react-router-dom";
 
 function Header(){
   return (
@@ -9,14 +10,14 @@ function Header(){
       <header className="header page__spacing">
         <div className="header__section">
           <div className="header__left-block">
-            <a href="/"><img className="logo" alt="логотип СМ3" src={logo} /></a>
+            <Link to="/"><img className="logo" alt="логотип СМ3" src={logo} /></Link>
           </div>
           <div className="header__center-block">
             <h1 className="header__title">CТУДЕНЧЕСКИЙ СОВЕТ</h1>
             <p className="header__subtitle">МГТУ ИМ. Н.Э. БАУМАНА</p>
           </div>
           <div className="header__right-block">
-            <a href="/account"><img className="header__person" src={headerPerson} /></a>
+            <Link to="/account"><img className="header__person" src={headerPerson} /></Link>
           </div>
         </div>
         <div className="header__nav page__spacing">

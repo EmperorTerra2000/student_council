@@ -10,13 +10,11 @@ function App() {
   return (
     <div className="page">
       <Header />
-      <Router>
-        <Switch>
-          <Route exact path="/account" component={Account} />
+        {/* <Switch> */}
           <Route exact path="/" component={Home} />
-          <Route component={Error} />
-        </Switch>
-      </Router>
+          <Route path="/account" component={Account} />
+          {/* <Route component={Error} /> */}
+        {/* </Switch> */}
       <Footer />
     </div>
   );

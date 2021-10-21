@@ -1,5 +1,7 @@
 import "./Account.css";
 
+import React, {useState} from "react";
+
 import profileAvatar from "../../images/person-4.jpg";
 import profileCup from "../../images/profile-cup.svg";
 import registCard_img_1 from "../../images/registCard-img-1.jpg";
@@ -19,6 +21,38 @@ import ClubCard from "../ClubCard";
 import card_progress_1 from '../../images/card-progress-1.svg';
 
 function Account(){
+
+  const [imagesPreview, setImagesPreview] = useState([]);
+
+  const uploadFile = (event) => {
+    //проверяем тип файла
+    if(!['image/jpeg','image/png','image/gif'].includes(event.target.files[0].type)){
+      alert('Разрешены только изображения');
+      event.target.value = '';
+      return
+    }
+    //проверяем размер файла
+    if(event.target.files[0].size > 2*1024*1024){
+      alert('Файл должен быть менее 2 МБ');
+      return
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setImagesPreview([...imagesPreview, e.target.result]);
+    }
+    reader.oneerror = (e) => {
+      alert('Ошибка');
+    }
+    reader.readAsDataURL(event.target.files[0]);
+    
+    console.log(event.target.value);
+    console.log(event.target.accept);
+    // console.log(event.target.files[0].type);
+    console.log(event);
+  }
+
   return (
     <main className="main">
       <section className="profile">
@@ -201,7 +235,7 @@ function Account(){
             <ClubCard data={{
               clubImage: clubImage_1,
               title: 'Бауманская',
-              stateNomer: 2,
+              stateNomer: 1,
             }}/>
             <ClubCard data={{
               clubImage: clubImage_1,
@@ -216,12 +250,22 @@ function Account(){
             <ClubCard data={{
               clubImage: clubImage_1,
               title: 'Бауманская asd fefsdfs',
-              stateNomer: 3,
+              stateNomer: 2,
             }}/>
             <ClubCard data={{
               clubImage: clubImage_1,
               title: 'Бауманская',
-              stateNomer: 2,
+              stateNomer: 1,
+            }}/>
+            <ClubCard data={{
+              clubImage: clubImage_1,
+              title: 'Бауманская asd fefsdfs',
+              stateNomer: 1,
+            }}/>
+            <ClubCard data={{
+              clubImage: clubImage_1,
+              title: 'Бауманская',
+              stateNomer: 1,
             }}/>
             <ClubCard data={{
               clubImage: clubImage_1,
@@ -236,22 +280,12 @@ function Account(){
             <ClubCard data={{
               clubImage: clubImage_1,
               title: 'Бауманская asd fefsdfs',
-              stateNomer: 3,
-            }}/>
-            <ClubCard data={{
-              clubImage: clubImage_1,
-              title: 'Бауманская',
               stateNomer: 2,
             }}/>
             <ClubCard data={{
               clubImage: clubImage_1,
-              title: 'Бауманская asd fefsdfs',
-              stateNomer: 3,
-            }}/>
-            <ClubCard data={{
-              clubImage: clubImage_1,
               title: 'Бауманская',
-              stateNomer: 2,
+              stateNomer: 1,
             }}/>
           </ul>
           <Button name="Больше" selectors="btn_active btn_type_lite" style={{marginTop: 0}}/>
@@ -269,15 +303,22 @@ function Account(){
               <div className="form__label">Сообщение</div>
               <textarea id="formMessage" name="message" className="form__input form__input_type_textarea"></textarea>
             </div>
-            <div className="form__item">
+            <div className="form__item form__item_type_file">
               <div className="file">
-                <div className="file__item">
-                  <input id="formImage" className="file__input" type="file" name="image" accept=".jpg, .png, .gif"></input>
-                  <div className="file__button"></div>
-                </div>
-                <div className="file__preview"></div>
+                <ul className="file__preview">
+                  {imagesPreview.map((item, index) => (
+                    <li className="file__preview-block" key={index}>
+                      <img className="file__preview-img" src={item} alt="загруженное фото" />
+                    </li>
+                  ))}
+                  <div className="file__item">
+                    <input onChange={uploadFile} id="formImage" className="file__input" type="file" name="image" accept=".jpg, .png, .gif"></input>
+                    <div className="file__button"></div>
+                  </div>
+                </ul>
               </div>
             </div>
+            <button className="btn btn_active btn_type_lite" style={{marginTop: 25}}>Отправить</button>
           </form>
         </div>
       </section>
