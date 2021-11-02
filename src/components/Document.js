@@ -1,10 +1,12 @@
 import "./Document.css";
 
-function Document(props){
+function Document({infoCard, srcImage}){
   return (
     <li className="document">
-      <img className="document__img" src={props.srcImg} />
-      <p className="document__name">{props.name}</p>
+      <a href={infoCard.link} className="document__link">
+        <img className="document__img" src={srcImage} />
+        <p className="document__name">{infoCard.name}</p>
+      </a>
     </li>
   );
 }

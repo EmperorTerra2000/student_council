@@ -1,10 +1,12 @@
 import "./Organization.css";
 
-function Organization(props){
+function Organization({srcImage, infoCard}){
   return (
     <figure className="organization">
-      <img className="organization__img" src={props.src} alt={props.name} />
-      <figcaption className="organization__name">{props.name}</figcaption>
+      <a href = {infoCard.link} className="organization__link">
+        <img className="organization__img" src={srcImage} alt={infoCard.name} />
+        <figcaption className="organization__name">{infoCard.name}</figcaption>
+      </a>
     </figure>
   );
 }

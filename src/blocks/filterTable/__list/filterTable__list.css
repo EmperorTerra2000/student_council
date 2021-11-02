@@ -5,5 +5,11 @@
   text-align: center;
   line-height: 17px;
   color: rgba(0, 0, 0, 0.5);
+  transition: all 190ms linear;
   margin-bottom: 17px;
+  cursor: pointer;
+}
+
+.filterTable__list:hover {
+  color: rgba(0, 0, 0, 0.8);
 }

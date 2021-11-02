@@ -1,9 +1,3 @@
-@import url('../../vendor/normalize.css');
-@import url('../../fonts/Gilroy.css');
-/* page  */
-@import url('../../blocks/page/page.css');
-@import url('../../blocks/page/__spacing/page__spacing.css');
-@import url('../../blocks/page/__spacing/_type/page__spacing_type_account.css');
 /* header */
 
 /* main */

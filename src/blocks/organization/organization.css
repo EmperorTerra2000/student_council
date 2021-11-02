@@ -1,14 +1,12 @@
 .organization {
-  /* width: calc((100% / 6) - 9px); */
-  /* flex-basis: 180px; */
   flex: 0 1 160px;
-  /* max-width: 160px; */
   margin: 0;
   margin-right: 30px;
   margin-bottom: 21px;
   display: flex;
   flex-flow: column;
   align-items: center;
+  cursor: pointer;
 }
 .organization:nth-child(6n) {
   margin-right: 0;
