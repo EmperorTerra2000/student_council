@@ -1,20 +1,13 @@
-import React from "react";
-
-function SidebarListFilter({value, handlerClick, filterName, listFilter}){
-  React.useEffect(() => {
-    console.log(listFilter['year']);
-    // const classList = ['filterTable__list'];
-    // if(listFilter[filterName] == value) classList.push('filterTable__list_active');
-
-    // console.log(classList, listFilter['event'], value);
-    // console.log(listFilter);
-  }, [listFilter]);
-  // const classList = ['filterTable__list'];
-  // if(listFilter[filterName] == value) classList.push('filterTable__list_active');
-
+function SidebarListFilter({value, handleClick, listDocuments}){
+  const isFilter = listDocuments.length == 0 ? false : listDocuments.every(item => {
+    return item.tag == value;
+  });
+  const classList = isFilter ? 'filterTable__list filterTable__list_active' : 'filterTable__list';
   
+  // if(value == "Все") classList = 'filterTable__list filterTable__list_active';
+
   return (
-    <li className={`filterTable__list `} onClick={(evt) => handlerClick(evt, filterName)}>{value}</li>
+    <li className={classList} onClick={handleClick}>{value}</li>
   );
 }
 

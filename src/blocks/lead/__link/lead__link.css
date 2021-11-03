@@ -6,3 +6,7 @@
   /* or 25px */
   text-transform: uppercase;
 }
+
+.lead__link_active {
+  border: 1px solid white;
+}

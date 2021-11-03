@@ -85,7 +85,7 @@
   position: relative;
   width: 100%;
   height: 500px;
-  max-width: 50%;
+  max-width: 720px;
   background: #ffffff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -94,18 +94,21 @@
 
 .popup__close {
   position: absolute;
-  right: -31px;
-  top: -32px;
+  right: 9px;
+  top: 8px;
   color: black;
-  width: 30px;
-  height: 30px;
+  width: 39px;
+  height: 39px;
   background: transparent url('../../images/popup-close-icon.svg');
   background-position: center;
-  background-size: auto;
+  background-size: 40px;
   background-repeat: no-repeat;
   border: none;
+  border: 2px solid white;
   padding: 0;
+  border-radius: 50%;
   cursor: pointer;
+  z-index: 1;
 }
 
 .popup__content {
@@ -116,6 +119,7 @@
 }
 
 .popup__block-image {
+  position: relative;
   overflow: hidden;
   border-radius: 0 0 14px 14px;
   height: 200px;
@@ -123,6 +127,9 @@
 }
 
 .popup__image {
+  position: absolute;
+  top: -40%;
+  /* left: -50px; */
   width: 100%;
   object-fit: contain;
   object-position: center;
@@ -135,9 +142,10 @@
 }
 
 .popup__block-info {
+  height: 300px;
   margin-top: 10px;
   padding: 0 25px 20px 25px;
-  overflow: scroll;
+  overflow-y: auto;
   max-height: 280px;
 }
 

@@ -1,23 +1,37 @@
 import "./Header.css";
-
+import React from "react";
 import logo from "../images/logo.svg";
 import headerPerson from "../images/header-person.svg";
-import { Link } from "react-router-dom";
+import DevelopmentPopup from "./DevelopmentPopup";
+// import { Link } from "react-router-dom";
 
 function Header(){
+  const [isDevelopmentPopupOpen, setIsDevelopmentPopupOpen] = React.useState(false);
+
+  //событие открытия попапа при нажатии на соответствующую кнопку
+  function handleDevelopmentPopupClick(){
+    setIsDevelopmentPopupOpen(true);
+  }
+
+  //закрываем попап
+  function handleCloseAllPopup(){
+    setIsDevelopmentPopupOpen(false);
+  }
+
   return (
     <>
+      <DevelopmentPopup isOpen={isDevelopmentPopupOpen} onClose={handleCloseAllPopup}/>
       <header className="header page__spacing">
         <div className="header__section">
           <div className="header__left-block">
-            <Link to="/"><img className="logo" alt="логотип СМ3" src={logo} /></Link>
+            <a href="/"><img className="logo" alt="логотип студсовета" src={logo} /></a>
           </div>
           <div className="header__center-block">
             <h1 className="header__title">CТУДЕНЧЕСКИЙ СОВЕТ</h1>
             <p className="header__subtitle">МГТУ ИМ. Н.Э. БАУМАНА</p>
           </div>
           <div className="header__right-block">
-            <Link to="/account"><img className="header__person" src={headerPerson} /></Link>
+            <img onClick={handleDevelopmentPopupClick} className="header__person" src={headerPerson} />
           </div>
         </div>
         <div className="header__nav page__spacing">

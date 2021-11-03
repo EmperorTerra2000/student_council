@@ -8,6 +8,7 @@
 @import url('../../blocks/filterTable/__filters/filterTable__filters.css');
 @import url('../../blocks/filterTable/__list/filterTable__list.css');
 @import url('../../blocks/filterTable/__subtitle/filterTable__subtitle.css');
+@import url('../../blocks/filterTable/__list/_active/filterTable__list_active.css');
 /* footer */
 
 * {

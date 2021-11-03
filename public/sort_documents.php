@@ -1,11 +1,11 @@
 <?php
-include '../db.php';
+include './db.php';
 
 $sql = "SELECT * FROM `documents` ";
 $fl = 0;
 $str = "";
 $arr = [];
-
+$_POST = (array)json_decode(file_get_contents("php://input", true));
 if (isset($_POST['year'])) {
   foreach ($_POST['year'] as $value) {
     if ($fl == 0) {
@@ -51,7 +51,9 @@ if (!$stmt->execute()) {
     die("Execution failed: (" . $stmt->errno . ") " . $stmt->error);
 }
 $result = $stmt->get_result();
+$arr = [];
 while ($a = ($result->fetch_assoc())){
-  echo json_encode($a, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+  array_push($arr, $a);
 }
+echo json_encode($arr, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 ?>

@@ -1,7 +1,9 @@
 import "./Home.css";
+import "../account/Account.css";
 import React from "react";
 
 import LeadEventPopup from "../LeadEventPopup";
+import LeadListDigest from "../LeadListDigest";
 import aboutImg from "../../images/about.jpg";
 import SidebarTableFilter from "../SidebarTableFilter";
 import SidebarBlockFilter from "../SidebarBlockFilter";
@@ -11,44 +13,27 @@ import Button from "../Button";
 import PersonTeam from "../PersonTeam";
 import DocumentsList from "../DocumentsList";
 
-import { communitiesImage, personsImage } from "./imageList";//массив картинок
-
-import {documents, communities, stocks, persons, digest} from "./constants.js";
+import {communities, stocks, persons, digest, events, departures} from "./constants.js";
 
 function Home(){
-  const [listDocuments, setListDocuments] = React.useState();
-  const [listFilter, setListFilter] = React.useState({year: 0, event: ''});
   const [isLeadEventPopupOpen, setIsLeadEventPopupOpen] = React.useState(false);
-
-  fetch('./sort_documents.php', {
-    method: 'POST',
-  })
-    .then((res) => console.log(res));
-  //фильтр документов в таблице
-  function filterDocuments(arrayDoc, {year, event}){
-    const doc = arrayDoc.filter((item) => {
-      if(item.year === year && item.tag === event){
-        return true;
-      } else return false;
-    });
-    console.log(doc);
-
-    return doc;
-  }
-
+  const [listDocuments, setListDocuments] = React.useState([]);
+  const [activeDigest, setActiveDigest] = React.useState(digest[0]);
+  
   React.useEffect(() => {
-    filterDocuments(documents, listFilter);
+    fetch('./sort_documents.php', {
+      method: 'POST',
+    })
+      .then(res => res.json())
+      .then(data => {
+        // console.log('ответ от сервера', data)
+        setListDocuments(data)
+      });
+
+    // console.log('Внутри useEffect', listDocuments);
   }, []);
 
-  //обработчик при нажатии на список фильтров
-  function handleClicListFilter(filterName, value){
-    let arr = listFilter;
-    arr[filterName] = value;
-    
-    setListFilter(arr);//переопределяем стейт
-
-    console.log(`Внутри функции ${filterName}`, listFilter);
-  }
+  // console.log('снаружи useEffect', listDocuments);
 
   //событие открытия попапа при нажатии на соответствующую кнопку
   function handleLeadEventPopupClick(){
@@ -65,27 +50,55 @@ function Home(){
     return objImage[name];
   }
 
+  //собитые при нажатии на фильтр
+  function handleFilterListClick(evt){
+    const respon = evt.target.innerText == "Все" ? '' : evt.target.innerText;
+    const obj = respon == '' ? {} : {tag: respon}
+    console.log(evt.target.innerText);
+    fetch('./sort_documents.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(obj),
+    })
+      .then(res => res.json())
+      .then(data => {
+        // console.log('ответ от сервера', data)
+        setListDocuments(data)
+      });
+  }
+
+  function handleChoiceDigest(event){
+    console.log(event.target.innerText);
+    const digestNow = digest.find((item) => {
+      return item.title.toUpperCase() == event.target.innerText; 
+    });
+
+    // console.log(digestNow);
+
+    setActiveDigest(digestNow);
+  }
+
   return (
     <>
-      <LeadEventPopup isOpen={isLeadEventPopupOpen} onClose={handleCloseAllPopup} digestInfo={digest}/>
+      <LeadEventPopup isOpen={isLeadEventPopupOpen} onClose={handleCloseAllPopup} digestInfo={activeDigest}/>
       <main className="main">
         <section className="lead">
-          <div className="lead__bckground">
+          <div className="lead__bckground" style={{'backgroundImage': `url(${activeDigest.image})`}}>
             <div className="lead__linear-gradient">
               <div className="lead__content page__spacing">
                 <div className="lead__event">
-                  <p className="lead__event-data">{digest.date}</p>
-                  <h2 className="lead__event-name">{digest.title}</h2>
-                  <p className="lead__event-description">{digest.description}</p>
+                  <p className="lead__event-data">{activeDigest.date}</p>
+                  <h2 className="lead__event-name">{activeDigest.title}</h2>
+                  <p className="lead__event-description">{activeDigest.description}</p>
                   <div onClick={handleLeadEventPopupClick}><Button name="Подробнее" selectors="btn_active btn_type_lead-detailed"/></div>
-                  <a href={digest.link}><Button name="Регистрация" selectors="btn_active btn_type_lead-regist"/></a>
+                  <a href={activeDigest.link}><Button name="Регистрация" selectors="btn_active btn_type_lead-regist"/></a>
                 </div>
                 <ul className="lead__nav-links">
-                  <li className="lead__nav-link"><a className="lead__link" href="#">МИСС ОЧАРОВАНИЕ</a></li>
-                  <li className="lead__nav-link"><a className="lead__link" href="#">ТУССОВОЧКА</a></li>
-                  <li className="lead__nav-link"><a className="lead__link" href="#">Квизоn</a></li>
-                  <li className="lead__nav-link"><a className="lead__link" href="#">ВЕЛОЗАЕЗД</a></li>
-                  <li className="lead__nav-link"><a className="lead__link" href="#">HALLOWEEN</a></li>
+                  {digest.map((item, index) => (
+                    <LeadListDigest key={index} handleClick={handleChoiceDigest} data={item} activeDigest={activeDigest}/>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -109,15 +122,13 @@ function Home(){
             <span className="main__line-title"></span>
             <div className="organizations__logo-list">
               {communities.map((item, index) => {
-                const orgLogo = findCommunitiesImage(item, communitiesImage);
-
-                return <Organization srcImage={orgLogo} key={index} infoCard={item} />
+                return <Organization key={index} infoCard={item} />
               })}
               <div className="organizations__spoiler-list">
               </div>
             </div>
             <div className="main__btn-block">
-              <Button name="Больше" selectors="btn_active btn_type_section" />
+              {/* <Button name="Больше" selectors="btn_active btn_type_section" /> */}
               <a href="#"><Button name="Хочу к вам" selectors="btn_active btn_type_section"/></a>
             </div>
           </article>
@@ -127,12 +138,14 @@ function Home(){
             <h2 className="main__title">Мероприятия</h2>
             <span className="main__line-title"></span>
             <div className="organizations__logo-list">
-              {/* <Organization src={organizLogo_3} name='Бауманские гончие псы' /> */}
+              {events.map((item, index) => {
+                return <Organization key={index} infoCard={item} />
+              })}
               <div className="organizations__spoiler-list">
               </div>
             </div>
             <div className="main__btn-block">
-              <Button name="Больше" selectors="btn_active btn_type_section" />
+              {/* <Button name="Больше" selectors="btn_active btn_type_section" /> */}
               <a href="#"><Button name="Хочу к вам" selectors="btn_active btn_type_section"/></a>
             </div>
           </article>
@@ -142,16 +155,19 @@ function Home(){
             <h2 className="main__title">Выезды</h2>
             <span className="main__line-title"></span>
             <div className="organizations__logo-list">
-              {/* <Organization src={organizLogo_4} name='Орлы !' /> */}
+              {departures.map((item, index) => {
+                return <Organization key={index} infoCard={item} />
+              })}
               <div className="organizations__spoiler-list"></div>
             </div>
             <div className="main__btn-block">
-              <Button name="Больше" selectors="btn_active btn_type_section" />
+              {/* <Button name="Больше" selectors="btn_active btn_type_section" /> */}
               <a href="#"><Button name="Хочу к вам" selectors="btn_active btn_type_section"/></a>
             </div>
           </article>
         </section>
-        <section className="stocks" id="stocks">
+        {/* ПЛЮШКИ, раскомментируйте, если они нужны */}
+        {/* <section className="stocks" id="stocks">
           <div className="stocks__bckground">
             <div className="stocks__content page__spacing">
               <h2 className="main__title main__title_type_stocks">Плюшки</h2>
@@ -164,22 +180,20 @@ function Home(){
               </ul>
             </div>
           </div>
-        </section>
-        <section className="team" id="team">
+        </section> */}
+        <section className="team" id="team" style={{marginTop: 25}}>
           <div className="team__content page__spacing">
             <h2 className="main__title">Команда</h2>
             <span className="main__line-title"></span>
-            <PersonTeam typeSelector="type_director" infoCard={persons[0]} avatar={personsImage['Ирина Трапезникова']} />
+            <PersonTeam typeSelector="type_director" infoCard={persons[0]}/>
             <ul className="team__list-person">
               {persons.map((item, index) => {
                 if(index == 0) return;
-                const personAvatar = findCommunitiesImage(item, personsImage);
-
-                return <PersonTeam key={index - 1} infoCard={item} avatar={personAvatar}/>
+                return <PersonTeam key={index - 1} infoCard={item}/>
               })}
             </ul>
             <div className="main__btn-block main__btn-block_type_team">
-              <Button name="Больше" selectors="btn_active btn_type_section" />
+              {/* <Button name="Больше" selectors="btn_active btn_type_section" /> */}
               <a href="#"><Button name="Хочу к вам" selectors="btn_active btn_type_section"/></a>
             </div>
           </div>
@@ -192,12 +206,9 @@ function Home(){
           </div>
           <div className="documents__content page__spacing">
             <SidebarTableFilter>
-              {/* <SidebarBlockFilter values={[2020, 2019, 2018]} filterName="year" setListFilter={setListFilter} listFilter={listFilter}/>
-              <SidebarBlockFilter values={['Выезды', 'Мероприятия', 'Стипендии']} style={{marginTop: 53}} filterName="event" setListFilter={setListFilter} listFilter={listFilter}/> */}
-              <SidebarBlockFilter values={[2020, 2019, 2018]} filterName="year" handlerClick={handleClicListFilter} listFilter={listFilter}/>
-              <SidebarBlockFilter values={['Выезды', 'Мероприятия', 'Стипендии']} style={{marginTop: 53}} filterName="event" handlerClick={handleClicListFilter} listFilter={listFilter}/>
+              <SidebarBlockFilter handleClick={handleFilterListClick} listDocuments={listDocuments} values={['Все','Выезды', 'Мероприятия', 'Стипендии']} style={{marginTop: 0}}/>
             </SidebarTableFilter>
-            <DocumentsList listData={documents} />
+            <DocumentsList listDocuments={listDocuments}/>
           </div>
         </section>
       </main>
