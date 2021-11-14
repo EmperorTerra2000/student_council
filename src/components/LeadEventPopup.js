@@ -1,4 +1,5 @@
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 
 function LeadEventPopup({digestInfo, isOpen, onClose}){
   const popupRef = React.useRef();
@@ -27,7 +28,8 @@ function LeadEventPopup({digestInfo, isOpen, onClose}){
           <div className='popup__block-info'>
             <h2 className='popup__title'>{digestInfo.title}</h2>
             <p className="popup__date">{digestInfo.date}</p>
-            <p className="popup__description">{digestInfo.description}</p>
+            {/* <div className="popup__description">{digestInfo.description.map((item, index) => (<p key={index} className='digest__paragraphs'>{item}</p>))}</div> */}
+            <div className="popup__description">{ReactHtmlParser(digestInfo.description)}</div>
           </div>
         </div>
       </div>

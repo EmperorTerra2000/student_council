@@ -2,9 +2,10 @@
   text-decoration: none;
   color: white;
   font-size: 15px;
-  line-height: 14px;
+  line-height: 19px;
   /* or 25px */
   text-transform: uppercase;
+  max-width: 220px;
 }
 
 .lead__link_active {

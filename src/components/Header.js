@@ -5,6 +5,7 @@ import headerPerson from "../images/header-person.svg";
 import DevelopmentPopup from "./DevelopmentPopup";
 // import { Link } from "react-router-dom";
 
+
 function Header(){
   const [isDevelopmentPopupOpen, setIsDevelopmentPopupOpen] = React.useState(false);
 
@@ -40,9 +41,9 @@ function Header(){
             <li className="header__nav-link"><a className="header__link" href="/#communities" >Клубы</a></li>
             <li className="header__nav-link"><a className="header__link" href="/#events" >Мероприятия</a></li>
             <li className="header__nav-link"><a className="header__link" href="/#departures" >Выезды</a></li>
-            <li className="header__nav-link"><a className="header__link" href="/#stocks" >Плюшки</a></li>
             <li className="header__nav-link"><a className="header__link" href="/#team" >Команда</a></li>
-            <li className="header__nav-link"><a className="header__link" href="/#documents" >Доки</a></li>
+            <li className="header__nav-link"><a className="header__link" href="/#documents" >Документы</a></li>
+            <li className="header__nav-link"><a className="header__link" href="http://studsovet.bmstu.ru/old-version/index.php">Старая версия сайта</a></li>
           </ul>
         </div>
       </header>

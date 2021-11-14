@@ -1,5 +1,7 @@
 .person__info_type_director {
   margin: 0;
+  margin-left: 18px;
+  max-width: 190px;
   display: flex;
   flex-direction: column;
   justify-content: center;
