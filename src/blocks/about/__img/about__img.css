@@ -1,13 +1,14 @@
 .about__img {
   position: relative;
   z-index: -1;
-  max-width: 730px;
+  max-width: 456px;
   margin-left: 30px;
   align-self: center;
+  /* margin-top: -100px; */
 }
-@media screen and (max-width: 1158px) {
+@media screen and (max-width: 1154px) {
   .about__img {
-    height: 69.3vw;
+    max-width: 400px;
   }
 }
 @media screen and (max-width: 1024px) {

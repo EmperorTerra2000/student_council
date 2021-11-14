@@ -1,6 +1,6 @@
 .lead__linear-gradient {
   width: 100%;
   height: 100%;
-  background: linear-gradient(-6deg, white 18%, transparent 18.1%),
-    linear-gradient(270deg, rgba(0, 0, 0, 0.9) 7%, 22%, transparent);
+  background: linear-gradient(356deg, white 15%, transparent 15.2%),
+    radial-gradient(circle farthest-side at right, rgba(0, 0, 0, 0.849) 30%, transparent);
 }

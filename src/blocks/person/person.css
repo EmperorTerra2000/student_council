@@ -1,4 +1,29 @@
 .person {
+  flex: 0 1 160px;
+  margin: 0;
+  margin-right: 30px;
+  margin-bottom: 21px;
   max-width: 161px;
   max-height: 320px;
 }
+.person:nth-child(6n) {
+  margin-right: 0;
+}
+.person:last-of-type {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1158px) {
+  .person:nth-child(6n) {
+    margin-right: 30px;
+  }
+  .person:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+
+/* @media screen and (max-width: 1158px) {
+  .person:nth-child(5n) {
+    margin-right: 0;
+  }
+} */

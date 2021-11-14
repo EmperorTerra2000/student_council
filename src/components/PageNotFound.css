@@ -1,0 +1,27 @@
+.notFound {
+  margin-top: 154px;
+  margin-bottom: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notFound__content {
+}
+
+.notFound__title {
+  color: #444444;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.notFound__subtitle {
+  color: #444444;
+  margin-top: 3px;
+  font-weight: 300;
+  font-size: 27px;
+  line-height: 35px;
+  text-align: center;
+}

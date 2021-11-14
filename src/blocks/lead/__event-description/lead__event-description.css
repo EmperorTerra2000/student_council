@@ -1,10 +1,15 @@
 .lead__event-description {
+  color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   line-height: 19px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 18px;
   max-height: 169px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  /* white-space: pre-line; */
+  position: relative;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to bottom, white 65%, rgba(0, 0, 0, 0));
 }

@@ -99,7 +99,7 @@
   color: black;
   width: 39px;
   height: 39px;
-  background: transparent url('../../images/popup-close-icon.svg');
+  background: rgba(68, 68, 68, 0.5) url('../../images/popup-close-icon.svg');
   background-position: center;
   background-size: 40px;
   background-repeat: no-repeat;
@@ -162,4 +162,17 @@
 
 .popup__description {
   margin-top: 8px;
+}
+
+/*about доп стили*/
+.about__description-items {
+  list-style: none;
+}
+.about__description-item {
+  line-height: 24px;
+}
+
+/*абзацы в дайджесте*/
+.digest__paragraphs {
+  margin-bottom: 10px;
 }
