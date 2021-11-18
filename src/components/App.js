@@ -8,15 +8,14 @@ function App() {
   return (
     <div className="page">
       <Header />
-      <Home />
-      {/* <Switch>
+      <Switch>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="*">
           <PageNotFound />
         </Route>
-      </Switch> */}
+      </Switch>
       <Footer />
     </div>
   );
