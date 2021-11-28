@@ -59,6 +59,9 @@
 @import url('../../blocks/documents/__main/documents__main.css');
 @import url('../../blocks/documents/__list/documents__list.css');
 
+@import url('../../blocks/iconSocial/iconSocial.css');
+@import url('../../blocks/iconSocial/_type/iconSocial_type_large.css');
+
 .popup {
   display: flex;
   z-index: 2;

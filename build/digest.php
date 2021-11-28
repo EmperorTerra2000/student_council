@@ -1,7 +1,7 @@
 <?php
 include "./db.php";
 
-$stmt = $connection->prepare("SELECT `title`, `date`, `description`, `link`, `image` FROM `posts` WHERE `digest` = 1");
+$stmt = $connection->prepare("SELECT `id`, `title`, `date`, `description`, `link`, `image` FROM `posts` WHERE `digest` = 1 ORDER BY `id` DESC");
 if (!$stmt->execute()) {
     $res = [
         "error" => 1,

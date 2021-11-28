@@ -2,8 +2,9 @@ import "./Home.css";
 import "../account/Account.css";
 import React from "react";
 import ReactHtmlParser from 'react-html-parser';
+import { Link } from "react-router-dom";
 
-import LeadEventPopup from "../LeadEventPopup";
+// import LeadEventPopup from "../LeadEventPopup";
 import LeadListDigest from "../LeadListDigest";
 import aboutImg from "../../images/about.jpg";
 import SidebarTableFilter from "../SidebarTableFilter";
@@ -16,12 +17,10 @@ import DocumentsList from "../DocumentsList";
 
 import {communities, stocks, persons, events, departures} from "./constants.js";
 
-function Home(){
-  const [isLeadEventPopupOpen, setIsLeadEventPopupOpen] = React.useState(false);
+function Home({activeDigest, setActiveDigest, listDigestData, setListDigestData}){
+  const leadBg = React.useRef();
   const [listDocuments, setListDocuments] = React.useState([]);
-  const [listDigestData, setListDigestData] = React.useState([]);
-  const [activeDigest, setActiveDigest] = React.useState({});
-  
+
   React.useEffect(() => {
     fetch('sort_documents.php', {
       method: 'POST',
@@ -30,33 +29,45 @@ function Home(){
       .then(data => {
         setListDocuments(data)
       });
+  }, []); 
 
-    fetch('digest.php', {
-      method: 'POST',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setListDigestData(data);
-        setActiveDigest(data[0]);
-      })
-  }, []);
+  // function transitionBg(element, time = 500, newImage){
+  //   //element в данное случае это ref
 
+  //   let start = (new Date()).getTime();
+
+  //   function animate() {
+  //     let now = (new Date()).getTime();
+  //     let elapsed = now - start;
+  //     let fraction = elapsed/time;
+
+  //     if(fraction < 0.5){
+
+  //     } 
+  //     else if(fraction < 1){
+
+  //     } 
+  //     else {
+        
+  //     }
+  //   }
+  // }
 
   //событие открытия попапа при нажатии на соответствующую кнопку
-  function handleLeadEventPopupClick(){
-    setIsLeadEventPopupOpen(true);
-  }
+  // function handleLeadEventPopupClick(){
+  //   setIsLeadEventPopupOpen(true);
+  // }
 
-  //закрываем попап
-  function handleCloseAllPopup(){
-    setIsLeadEventPopupOpen(false);
-  }
+  // //закрываем попап
+  // function handleCloseAllPopup(){
+  //   setIsLeadEventPopupOpen(false);
+  // }
 
   //собитые при нажатии на фильтр
   function handleFilterListClick(evt){
-    const respon = evt.target.innerText == "Все" ? '' : evt.target.innerText;
-    const obj = respon == '' ? {} : {tag: respon}
-    console.log(evt.target.innerText);
+    const respon = evt.target.innerText === "Все" ? '' : evt.target.innerText;
+    const obj = respon === '' ? {} : {tag: respon}
+    // console.log(evt.target.innerText);
     fetch('./sort_documents.php', {
       method: 'POST',
       headers: {
@@ -78,29 +89,19 @@ function Home(){
     setActiveDigest(digestNow);
   }
 
-  // const objText = {
-  //   text: '<p class="lead__event-name">SDAasdASDfS<br>DwAasdwfasda<br>sdwfwasd<a href="vk.com">нажмите сюда чтобы перейти</a></p>',
-  // }
-
-  // const jsonObj = JSON.stringify(objText);
-  // console.log(jsonObj);
-
-  // const textHTML = JSON.parse(jsonObj).text;
-  // console.log(textHTML);
-
   return (
     <>
-      <LeadEventPopup isOpen={isLeadEventPopupOpen} onClose={handleCloseAllPopup} digestInfo={activeDigest}/>
+      {/* <LeadEventPopup isOpen={isLeadEventPopupOpen} onClose={handleCloseAllPopup} digestInfo={activeDigest}/> */}
       <main className="main">
         <section className="lead">
-          <div className="lead__bckground" style={{'backgroundImage': `url(${activeDigest.image})`}}>
+          <div className="lead__bckground" ref={leadBg} style={{'backgroundImage': `url(${activeDigest.image})`}}>
             <div className="lead__linear-gradient">
               <div className="lead__content page__spacing">
                 <div className="lead__event">
                   <p className="lead__event-data">{activeDigest.date}</p>
                   <h2 className="lead__event-name">{activeDigest.title}</h2>
                   <div className="lead__event-description">{ReactHtmlParser(activeDigest.description)}</div>
-                  <div onClick={handleLeadEventPopupClick}><Button name="Подробнее" selectors="btn_active btn_type_lead-detailed"/></div>
+                  <Link to={`digest/${activeDigest.id}`}><Button name="Подробнее" selectors="btn_active btn_type_lead-detailed"/></Link>
                   {activeDigest.link && (
                     <a href={activeDigest.link} target = "_blank"><Button name="Регистрация" selectors="btn_active btn_type_lead-regist"/></a>
                   )}

@@ -1,0 +1,65 @@
+@import url('../../blocks/page/__spacing/_type/page__spacing_type_digest.css');
+
+.digestInfo {
+  margin-top: 30px;
+}
+
+.digestInfo__block-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.digestInfo__icon {
+  object-fit: cover;
+  object-position: center;
+  width: 159px;
+  height: 159px;
+  border-radius: 20px;
+}
+
+.digestInfo__title {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 98.4%;
+  width: 540px;
+}
+
+.digestInfo__block-content {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.digestInfo__list-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 35px;
+  width: 159px;
+}
+
+.digestInfo__block-description {
+  max-width: 540px;
+}
+
+.digestInfo__description {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  margin-bottom: 50px;
+}
+
+.digestInfo__date {
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 13px;
+}
+
+.digestInfo__link {
+  display: block;
+}
+
+.digestInfo__link:first-child {
+  margin-bottom: 31px;
+}

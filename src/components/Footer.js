@@ -14,8 +14,8 @@ function Footer(){
           <a className="footer__link-logo" href="#"><p className="footer__text-logo">Студенческий совет</p></a>
         </div>
         <div className="footer__icons">
-          <a className="footer__link-icon" href="https://vk.com/studsovet_bmstu" target = "_blank"><img src={iconVk} alt="Вконтакте" className="footer__icon" /></a>
-          <a className="footer__link-icon" href="https://instagram.com/studsovet_bmstu?utm_medium=copy_link" target = "_blank"><img src={iconInst} alt="Инстаграм" className="footer__icon" /></a>
+          <a className="footer__link-icon" href="https://vk.com/studsovet_bmstu" target = "_blank"><img src={iconVk} alt="Вконтакте" className="iconSocial" /></a>
+          <a className="footer__link-icon" href="https://instagram.com/studsovet_bmstu?utm_medium=copy_link" target = "_blank"><img src={iconInst} alt="Инстаграм" className="iconSocial" /></a>
         </div>
       </div>
     </footer>
